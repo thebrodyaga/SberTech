@@ -1,6 +1,6 @@
-package com.sbertec.Model;
+package com.sbertech.Model;
 
-import com.sbertec.Model.Xml.Rss;
+import com.sbertech.Model.Xml.Rss;
 
 /**
  * Created by Emelyanov.N4 on 29.01.2018.

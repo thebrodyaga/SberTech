@@ -1,4 +1,4 @@
-package com.sbertec.Presenter;
+package com.sbertech.Presenter;
 
 /**
  * Created by Emelyanov.N4 on 29.01.2018.

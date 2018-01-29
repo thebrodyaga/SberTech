@@ -1,8 +1,8 @@
-package com.sbertec.Presenter;
+package com.sbertech.Presenter;
 
-import com.sbertec.Model.AllHubsModel;
-import com.sbertec.Model.Xml.Rss;
-import com.sbertec.View.MainActivityView;
+import com.sbertech.Model.AllHubsModel;
+import com.sbertech.Model.Xml.Rss;
+import com.sbertech.View.MainActivityView;
 
 /**
  * Created by Emelyanov.N4 on 29.01.2018.

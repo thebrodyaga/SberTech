@@ -1,4 +1,4 @@
-package com.sbertec;
+package com.sbertech;
 
 import android.content.Context;
 import android.support.test.InstrumentationRegistry;

@@ -1,4 +1,4 @@
-package com.sbertec;
+package com.sbertech;
 
 import org.junit.Test;
 

@@ -1,6 +1,7 @@
-package com.sbertec.Model;
+package com.sbertech.Model;
 
-import com.sbertec.Model.Xml.Rss;
+import com.fasterxml.jackson.dataformat.xml.XmlMapper;
+import com.sbertech.Model.Xml.Rss;
 
 import org.simpleframework.xml.core.Persister;
 
@@ -9,6 +10,9 @@ import java.io.InputStreamReader;
 import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
+
+import static junit.framework.Assert.assertTrue;
+
 
 /**
  * Created by Emelyanov.N4 on 29.01.2018.
@@ -50,6 +54,11 @@ public class AllHubsModelImp implements AllHubsModel {
     }
 
     private Rss parseXml(String xml) throws Exception {
-        return new Persister().read(Rss.class, new StringReader(xml), false);
+        XmlMapper xmlMapper = new XmlMapper();
+        return xmlMapper.readValue(xml, Rss.class);
     }
+
+   /* private Rss parseXml(String xml) throws Exception {
+        return new Persister().read(Rss.class, new StringReader(xml), false);
+    }*/
 }
