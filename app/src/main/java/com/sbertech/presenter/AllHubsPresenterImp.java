@@ -1,18 +1,20 @@
-package com.sbertech.Presenter;
+package com.sbertech.presenter;
 
-import com.sbertech.Model.AllHubsModel;
-import com.sbertech.Model.Xml.Rss;
-import com.sbertech.View.MainActivityView;
+import android.support.annotation.Nullable;
+
+import com.sbertech.model.AllHubsModel;
+import com.sbertech.model.Xml.Rss;
+import com.sbertech.view.FragmentView;
 
 /**
  * Created by Emelyanov.N4 on 29.01.2018.
  */
 
 public class AllHubsPresenterImp implements AllHubsPresenter, AllHubsModel.OnFinishedListener {
-    private MainActivityView view;
+    private FragmentView view;
     private AllHubsModel model;
 
-    public AllHubsPresenterImp(MainActivityView view, AllHubsModel model) {
+    public AllHubsPresenterImp(FragmentView view, AllHubsModel model) {
         this.view = view;
         this.model = model;
     }
@@ -30,6 +32,11 @@ public class AllHubsPresenterImp implements AllHubsPresenter, AllHubsModel.OnFin
     }
 
     @Override
+    public void refreshData() {
+        model.loadDate(this);
+    }
+
+    @Override
     public void onSuccessful(Rss result) {
         if (view != null) {
             view.setData(result);
@@ -38,10 +45,10 @@ public class AllHubsPresenterImp implements AllHubsPresenter, AllHubsModel.OnFin
     }
 
     @Override
-    public void onError(String message) {
+    public void onError(@Nullable String message) {
         if (view != null) {
-            view.showMessage(message);
             view.hideProgress();
+            view.showMessage(message != null ? message : "Что-то пошло не так :(");
         }
     }
 }

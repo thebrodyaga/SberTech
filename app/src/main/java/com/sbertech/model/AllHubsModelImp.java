@@ -1,17 +1,13 @@
-package com.sbertech.Model;
+package com.sbertech.model;
 
 import com.fasterxml.jackson.dataformat.xml.XmlMapper;
-import com.sbertech.Model.Xml.Rss;
+import com.sbertech.model.Xml.Rss;
 
-import org.simpleframework.xml.core.Persister;
 
 import java.io.BufferedReader;
 import java.io.InputStreamReader;
-import java.io.StringReader;
 import java.net.HttpURLConnection;
 import java.net.URL;
-
-import static junit.framework.Assert.assertTrue;
 
 
 /**
@@ -34,11 +30,12 @@ public class AllHubsModelImp implements AllHubsModel {
                     int responseCode = con.getResponseCode();
                     System.out.println("\nSending 'GET' request to URL : " + url);
                     System.out.println("Response Code : " + responseCode);
-
+                    if (responseCode != 200)
+                        throw new Exception("Что-то пошло не так");
                     BufferedReader in = new BufferedReader(
                             new InputStreamReader(con.getInputStream()));
                     String inputLine;
-                    StringBuffer response = new StringBuffer();
+                    StringBuilder response = new StringBuilder();
 
                     while ((inputLine = in.readLine()) != null) {
                         response.append(inputLine);
@@ -57,8 +54,4 @@ public class AllHubsModelImp implements AllHubsModel {
         XmlMapper xmlMapper = new XmlMapper();
         return xmlMapper.readValue(xml, Rss.class);
     }
-
-   /* private Rss parseXml(String xml) throws Exception {
-        return new Persister().read(Rss.class, new StringReader(xml), false);
-    }*/
 }

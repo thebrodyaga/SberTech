@@ -1,4 +1,4 @@
-package com.sbertech.Presenter;
+package com.sbertech.presenter;
 
 /**
  * Created by Emelyanov.N4 on 29.01.2018.
@@ -6,5 +6,8 @@ package com.sbertech.Presenter;
 
 public interface AllHubsPresenter {
     void loadDate();
+
     void onDestroy();
+
+    void refreshData();
 }

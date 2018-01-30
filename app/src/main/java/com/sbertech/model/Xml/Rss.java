@@ -1,4 +1,4 @@
-package com.sbertech.Model.Xml;
+package com.sbertech.model.Xml;
 
 /**
  * Created by Emelyanov.N4 on 29.01.2018.

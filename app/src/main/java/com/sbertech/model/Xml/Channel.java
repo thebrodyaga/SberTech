@@ -1,10 +1,6 @@
-package com.sbertech.Model.Xml;
+package com.sbertech.model.Xml;
 
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlCData;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-
-import java.util.List;
 
 /**
  * Created by Emelyanov.N4 on 29.01.2018.

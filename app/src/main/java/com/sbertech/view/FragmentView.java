@@ -1,12 +1,12 @@
-package com.sbertech.View;
+package com.sbertech.view;
 
-import com.sbertech.Model.Xml.Rss;
+import com.sbertech.model.Xml.Rss;
 
 /**
  * Created by Emelyanov.N4 on 29.01.2018.
  */
 
-public interface MainActivityView {
+public interface FragmentView {
     void getData();
 
     void showProgress();

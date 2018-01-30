@@ -1,6 +1,8 @@
-package com.sbertech.Model.Xml;
+package com.sbertech.model.Xml;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlElementWrapper;
+
+import java.util.Date;
 
 /**
  * Created by Emelyanov.N4 on 29.01.2018.
@@ -11,7 +13,7 @@ public class Item
 {
     private Guid guid;
 
-    private String pubDate;
+    private Date pubDate;
 
     private String title;
 
@@ -34,12 +36,12 @@ public class Item
         this.guid = guid;
     }
 
-    public String getPubDate ()
+    public Date getPubDate ()
     {
         return pubDate;
     }
 
-    public void setPubDate (String pubDate)
+    public void setPubDate (Date pubDate)
     {
         this.pubDate = pubDate;
     }

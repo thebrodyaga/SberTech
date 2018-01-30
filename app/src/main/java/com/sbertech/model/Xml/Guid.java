@@ -1,7 +1,6 @@
-package com.sbertech.Model.Xml;
+package com.sbertech.model.Xml;
 
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlProperty;
-import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlRootElement;
 import com.fasterxml.jackson.dataformat.xml.annotation.JacksonXmlText;
 
 /**
